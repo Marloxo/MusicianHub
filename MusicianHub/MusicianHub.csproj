@@ -195,6 +195,10 @@
     <Compile Include="Migrations\201606131144094_PoplateGenresTable.Designer.cs">
       <DependentUpon>201606131144094_PoplateGenresTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606131320053_AddForeignKeyPropertiesToGig.cs" />
+    <Compile Include="Migrations\201606131320053_AddForeignKeyPropertiesToGig.Designer.cs">
+      <DependentUpon>201606131320053_AddForeignKeyPropertiesToGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606131144094_PoplateGenresTable.resx">
       <DependentUpon>201606131144094_PoplateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606131320053_AddForeignKeyPropertiesToGig.resx">
+      <DependentUpon>201606131320053_AddForeignKeyPropertiesToGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

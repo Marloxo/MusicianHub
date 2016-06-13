@@ -1,5 +1,7 @@
-﻿using MusicianHub.Models;
+﻿using Microsoft.AspNet.Identity;
+using MusicianHub.Models;
 using MusicianHub.ViewModel;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -38,13 +40,25 @@ namespace MusicianHub.Controllers
 
         // POST: Gigs/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [Authorize]
+        public ActionResult Create(GigFormViewModel viewModel)
         {
             try
             {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                var gig = new Gig
+                {
+                    ArtistId = User.Identity.GetUserId(),
+                    DateTime = DateTime.Parse($"{viewModel.Date} {viewModel.Time}"),
+                    Venue = viewModel.Venue,
+                    GenreId = viewModel.Genre
+
+                };
+
+                _context.Gigs.Add(gig);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index", "Home");
             }
             catch
             {

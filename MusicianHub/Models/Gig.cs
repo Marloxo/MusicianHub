@@ -15,8 +15,11 @@ namespace MusicianHub.Models
 
         [Required]
         public ApplicationUser Artist { get; set; }
-
         [Required]
+        public string ArtistId { get; set; }
+
         public Genre Genre { get; set; }
+        [Required]
+        public byte GenreId { get; set; }
     }
 }

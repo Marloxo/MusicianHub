@@ -16,3 +16,7 @@ add-migration OverrideConventionsForGigsAndGenres
 update-database
 
 add-migration PoplateGenresTable
+
+3- add-migration AddForeignKeyPropertiesToGig
+
+update-database
