@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using MusicianHub.Models;
 using MusicianHub.ViewModel;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -53,7 +52,9 @@ namespace MusicianHub.Controllers
                 var gig = new Gig
                 {
                     ArtistId = User.Identity.GetUserId(),
-                    DateTime = DateTime.Parse($"{viewModel.Date} {viewModel.Time}"),
+                    //because this too much details to the Controller
+                    //DateTime = DateTime.Parse($"{viewModel.Date} {viewModel.Time}"),
+                    DateTime = viewModel.Datetime,
                     Venue = viewModel.Venue,
                     GenreId = viewModel.Genre
 
