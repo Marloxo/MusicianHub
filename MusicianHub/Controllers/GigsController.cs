@@ -28,6 +28,7 @@ namespace MusicianHub.Controllers
         }
 
         // GET: Gigs/Create
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new GigFormViewModel
@@ -45,6 +46,9 @@ namespace MusicianHub.Controllers
         {
             try
             {
+                //by default the Gig table/model have relation with Genre table and Artist
+                //So instead of using the relation with calling all the class
+                //we optimize the call to database and query with add and id for the two model in the Gig class 
 
                 var gig = new Gig
                 {
@@ -62,7 +66,11 @@ namespace MusicianHub.Controllers
             }
             catch
             {
-                return View();
+                var dbviewModel = new GigFormViewModel
+                {
+                    Genres = _context.Genres.ToList()
+                };
+                return View(dbviewModel);
             }
         }
 

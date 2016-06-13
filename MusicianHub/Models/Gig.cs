@@ -13,7 +13,6 @@ namespace MusicianHub.Models
         [StringLength(255)]
         public string Venue { get; set; }
 
-        [Required]
         public ApplicationUser Artist { get; set; }
         [Required]
         public string ArtistId { get; set; }
