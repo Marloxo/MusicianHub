@@ -43,6 +43,12 @@ namespace MusicianHub.Controllers
         [Authorize]
         public ActionResult Create(GigFormViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Genres = _context.Genres.ToList();
+                return View("Create", viewModel);
+            }
+
             try
             {
                 //by default the Gig table/model have relation with Genre table and Artist
@@ -54,7 +60,7 @@ namespace MusicianHub.Controllers
                     ArtistId = User.Identity.GetUserId(),
                     //because this too much details to the Controller
                     //DateTime = DateTime.Parse($"{viewModel.Date} {viewModel.Time}"),
-                    DateTime = viewModel.Datetime,
+                    DateTime = viewModel.GetDatetime(),
                     Venue = viewModel.Venue,
                     GenreId = viewModel.Genre
 
@@ -67,11 +73,8 @@ namespace MusicianHub.Controllers
             }
             catch
             {
-                var dbviewModel = new GigFormViewModel
-                {
-                    Genres = _context.Genres.ToList()
-                };
-                return View(dbviewModel);
+                viewModel.Genres = _context.Genres.ToList();
+                return View(viewModel);
             }
         }
 
