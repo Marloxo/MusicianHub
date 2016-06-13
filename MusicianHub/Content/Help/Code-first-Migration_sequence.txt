@@ -1,0 +1,16 @@
+1- Enable-Migrations
+
+add-migration InitialModel
+
+update-database
+
+
+2- add-migration CreateGigTable
+
+add-migration CreateGigTable -force
+
+update-database
+
+add-migration OverrideConventionsForGigsAndGenres
+
+update-database
