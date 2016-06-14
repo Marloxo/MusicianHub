@@ -223,6 +223,13 @@
     <Content Include="Content\Help\Resource\3.PNG" />
     <Content Include="Content\Help\Resource\4.PNG" />
     <Content Include="Content\Help\Resource\5.PNG" />
+    <Content Include="Content\Help\Resource\Color p1.PNG" />
+    <Content Include="Content\Help\Resource\Color p2.PNG" />
+    <Content Include="Content\Help\Resource\Color p3.PNG" />
+    <Content Include="Content\Help\Resource\Color.PNG" />
+    <Content Include="Content\Help\Resource\Design Decision.PNG" />
+    <Content Include="Content\Help\Resource\Input Fileds Usability Best Practices.PNG" />
+    <Content Include="Content\Help\Resource\Label Usability Best Practices.PNG" />
     <Content Include="Content\Help\Resource\order list.PNG" />
     <Content Include="Content\Help\Resource\overriding conventions.PNG" />
     <Content Include="Content\Help\Resource\Requirments Doc.png" />

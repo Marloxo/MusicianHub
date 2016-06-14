@@ -23,6 +23,11 @@ textarea {
     max-width: 280px;
 }
 
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
 
 /*Bootstrap Overrides*/
 
@@ -53,9 +58,11 @@ textarea {
     border-top-color: #fff;
     border-bottom-color: #fff;
 }
+
 .navbar-brand {
     font-weight: 700;
 }
+
 body {
     font-size: 17px;
 }
