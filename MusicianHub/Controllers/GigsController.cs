@@ -41,6 +41,7 @@ namespace MusicianHub.Controllers
         // POST: Gigs/Create
         [HttpPost]
         [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
