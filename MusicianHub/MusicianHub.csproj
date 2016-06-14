@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201606131320053_AddForeignKeyPropertiesToGig.Designer.cs">
       <DependentUpon>201606131320053_AddForeignKeyPropertiesToGig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606142005571_AddNameToApplicationUser.cs" />
+    <Compile Include="Migrations\201606142005571_AddNameToApplicationUser.Designer.cs">
+      <DependentUpon>201606142005571_AddNameToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -210,6 +214,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\FutureDate.cs" />
     <Compile Include="ViewModel\GigFormViewModel.cs" />
+    <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +223,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Help\Code-first-Migration_sequence.txt" />
+    <Content Include="Content\Help\ReSharper.txt" />
     <Content Include="Content\Help\Resource\1.PNG" />
     <Content Include="Content\Help\Resource\2.PNG" />
     <Content Include="Content\Help\Resource\3.PNG" />
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606131320053_AddForeignKeyPropertiesToGig.resx">
       <DependentUpon>201606131320053_AddForeignKeyPropertiesToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606142005571_AddNameToApplicationUser.resx">
+      <DependentUpon>201606142005571_AddNameToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
