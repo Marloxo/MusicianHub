@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using MusicianHub.Models;
 using MusicianHub.ViewModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -15,7 +16,24 @@ namespace MusicianHub.Controllers
             _context = new ApplicationDbContext();
         }
 
-        // GET: Gigs
+        [Authorize]
+        public ActionResult Attending()
+        {
+            var userId = User.Identity.GetUserId();
+            var gigs = _context.Attendances
+                .Where(a => a.AttendeeId == userId)
+                .Select(a => a.Gig)
+                .Include(g => g.Artist)
+                .Include(g => g.Genre)
+                .ToList();
+
+            var viewModel = new GigViewModel
+            {
+                UpcomingGigs = gigs,
+                ShowActions = User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
+        }
 
         // GET: Gigs/Create
         [Authorize]

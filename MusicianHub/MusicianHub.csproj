@@ -240,7 +240,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\FutureDate.cs" />
     <Compile Include="ViewModel\GigFormViewModel.cs" />
-    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\GigViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ValidTime.cs" />
   </ItemGroup>
@@ -339,6 +339,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Gigs\Create.cshtml" />
+    <None Include="Views\Gigs\Attending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

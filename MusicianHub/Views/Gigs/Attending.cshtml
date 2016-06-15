@@ -1,7 +1,10 @@
 ﻿@model  MusicianHub.ViewModel.GigViewModel
+
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending Events";
 }
+
+<h2>Attending Events</h2>
 
 <ul class="gigs">
     @foreach (var gig in Model.UpcomingGigs)
@@ -36,37 +39,3 @@
     }
 
 </ul>
-
-@section scripts
-{
-    <script>
-        $(document).ready(function () {
-
-            $(".js-toggle-attendance").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
-                .done(function () {
-                    button
-                        .removeClass("btn-default")
-                        .addClass("btn-info")
-                        .text("Going");
-                })
-                .fail(function () {
-                    alert("Something failed!");
-                });
-            });
-
-            $(".js-toggle-follow").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/followings", { followeeId: button.attr("data-user-id") })
-                .done(function () {
-                    button
-                        .text("Following");
-                })
-                .fail(function () {
-                    alert("Something failed!");
-                });
-            });
-        });
-    </script>
-}

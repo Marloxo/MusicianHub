@@ -3,7 +3,7 @@ using MusicianHub.Models;
 
 namespace MusicianHub.ViewModel
 {
-    public class HomeViewModel
+    public class GigViewModel
     {
         public IEnumerable<Gig> UpcomingGigs { get; set; }
         public bool ShowActions { get; set; }
