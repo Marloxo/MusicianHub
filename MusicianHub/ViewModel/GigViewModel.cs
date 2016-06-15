@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using MusicianHub.Models;
+using System.Collections.Generic;
 
 namespace MusicianHub.ViewModel
 {
@@ -7,5 +7,6 @@ namespace MusicianHub.ViewModel
     {
         public IEnumerable<Gig> UpcomingGigs { get; set; }
         public bool ShowActions { get; set; }
+        public string Heading { get; set; }
     }
 }

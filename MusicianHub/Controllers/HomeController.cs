@@ -25,9 +25,10 @@ namespace MusicianHub.Controllers
             var viewModel = new GigViewModel
             {
                 UpcomingGigs = upcomingGigs,
-                ShowActions = User.Identity.IsAuthenticated
+                ShowActions = User.Identity.IsAuthenticated,
+                Heading = "Upcoming Events"
             };
-            return View(viewModel);
+            return View("Gigs", viewModel);
         }
 
         public ActionResult About()
