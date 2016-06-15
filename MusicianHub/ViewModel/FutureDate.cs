@@ -9,9 +9,10 @@ namespace MusicianHub.ViewModel
         public override bool IsValid(object value)
         {
             DateTime dateTime;
-            var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "d MMM YYYY",
-                CultureInfo.CurrentCulture,
+            var s = Convert.ToString(value);
+            var isValid = DateTime.TryParseExact(s,
+                @"d MMM yyyy",
+                CultureInfo.InvariantCulture,
                 DateTimeStyles.None,
                 out dateTime);
 
