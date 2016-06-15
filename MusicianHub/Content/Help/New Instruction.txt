@@ -1,0 +1,13 @@
+﻿navigate between class methods : Ctrl+f12
+
+collapse all methods : Ctrl-M + Ctrl-O & Ctrl-M + Ctrl-P
+
+highlight tag or section : Ctrl+W
+
+surround  section with built-in type : Ctrl+alt+J
+
+
+
+Web Essentials Zencoding:
+
+(div.date>div.month+div.day)+(div.details>span.artist+span.genre)
