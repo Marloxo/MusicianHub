@@ -11,15 +11,16 @@ namespace MusicianHub.ViewModel
         public string Venue { get; set; }
 
         [Required]
-        [FutureDate]
+        //[FutureDate]
         public string Date { get; set; }
 
         [Required]
-        [ValidTime]
+        //[ValidTime]
         public string Time { get; set; }
 
         [Required]
         public byte Genre { get; set; }
+
         public IEnumerable<Genre> Genres { get; set; }
 
         public DateTime GetDatetime()

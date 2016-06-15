@@ -6,6 +6,7 @@ highlight tag or section : Ctrl+W
 
 surround  section with built-in type : Ctrl+alt+J
 
+Move Class to another Folder with ReShaper: Ctrl+Shift+R
 
 
 Web Essentials Zencoding:

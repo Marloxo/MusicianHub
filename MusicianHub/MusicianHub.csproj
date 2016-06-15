@@ -57,19 +57,31 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -172,10 +184,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Dtos\AttendancesDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,9 +218,14 @@
     <Compile Include="Migrations\201606142005571_AddNameToApplicationUser.Designer.cs">
       <DependentUpon>201606142005571_AddNameToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606151007162_AddAttendance.cs" />
+    <Compile Include="Migrations\201606151007162_AddAttendance.Designer.cs">
+      <DependentUpon>201606151007162_AddAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -230,6 +250,7 @@
     <Content Include="Content\Help\Resource\4.PNG" />
     <Content Include="Content\Help\Resource\5.PNG" />
     <Content Include="Content\Help\Resource\Actions.PNG" />
+    <Content Include="Content\Help\Resource\API Contract.PNG" />
     <Content Include="Content\Help\Resource\Color p1.PNG" />
     <Content Include="Content\Help\Resource\Color p2.PNG" />
     <Content Include="Content\Help\Resource\Color p3.PNG" />
@@ -237,11 +258,13 @@
     <Content Include="Content\Help\Resource\Css Positioning.PNG" />
     <Content Include="Content\Help\Resource\Css Positioningp1.PNG" />
     <Content Include="Content\Help\Resource\Design Decision.PNG" />
+    <Content Include="Content\Help\Resource\DMTU.PNG" />
     <Content Include="Content\Help\Resource\Input Fileds Usability Best Practices.PNG" />
     <Content Include="Content\Help\Resource\Label Usability Best Practices.PNG" />
     <Content Include="Content\Help\Resource\Markup.PNG" />
     <Content Include="Content\Help\Resource\order list.PNG" />
     <Content Include="Content\Help\Resource\overriding conventions.PNG" />
+    <Content Include="Content\Help\Resource\Relational Model.PNG" />
     <Content Include="Content\Help\Resource\Requirments Doc.png" />
     <Content Include="Content\Help\Resource\UE2.PNG" />
     <Content Include="Content\Help\Resource\User Experience.PNG" />
@@ -337,6 +360,9 @@
     <EmbeddedResource Include="Migrations\201606142005571_AddNameToApplicationUser.resx">
       <DependentUpon>201606142005571_AddNameToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606151007162_AddAttendance.resx">
+      <DependentUpon>201606151007162_AddAttendance.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -356,7 +382,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4398</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:4398/</IISUrl>
+          <IISUrl>http://localhost:404/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

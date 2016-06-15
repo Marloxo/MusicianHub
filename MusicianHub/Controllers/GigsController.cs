@@ -35,6 +35,7 @@ namespace MusicianHub.Controllers
                 Genres = _context.Genres.ToList()
             };
 
+            //ViewBag.Genres = new SelectList(_context.Genres.ToList().AsEnumerable(), "Id", "Name");
             return View(viewModel);
         }
 
