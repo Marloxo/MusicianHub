@@ -19,13 +19,5 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs-repos.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = MusicianHub\\MusicianHub.csproj
-		SccProjectName1 = MusicianHub
-		SccLocalPath1 = MusicianHub
-	EndGlobalSection
+	
 EndGlobal
