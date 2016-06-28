@@ -2,10 +2,12 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
 using MusicianHub.Models;
 using Owin;
 using System;
+using System.Threading.Tasks;
 
 namespace MusicianHub
 {
@@ -70,9 +72,24 @@ namespace MusicianHub
                 ClientSecret = "gn7IAjt2oxFip_Fvo6ILHh8Q"
             });
 
-            app.UseFacebookAuthentication(
-               appId: "900746463371149",
-               appSecret: "06f1b22d3a7d3c76d99f0aced2acf4b9");
+            app.UseFacebookAuthentication(new FacebookAuthenticationOptions
+            {
+                AppId = "900746463371149",
+                AppSecret = "06f1b22d3a7d3c76d99f0aced2acf4b9",
+                /*Useless add Didn't work !*/
+                Scope = { "email" },
+                Provider = new FacebookAuthenticationProvider
+                {
+                    OnAuthenticated = context =>
+                    {
+                        context.Identity.AddClaim(new System.Security.Claims.Claim("FacebookAccessToken", context.AccessToken));
+                        return Task.FromResult(true);
+                    }
+                }
+            });
+
+
+
         }
     }
 }

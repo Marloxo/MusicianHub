@@ -341,7 +341,60 @@ namespace MusicianHub.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
+
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+
+                    #region Change SignUp In Facebook Case to skip add email
+                    //skip the confirm step1
+                    //return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+
+                    /*My edit to skip the Confirmation*/
+                    //if (User.Identity.IsAuthenticated)
+                    //{
+                    //    return RedirectToAction("Index", "Manage");
+                    //}
+
+                    ///*Add from ref:http://stackoverflow.com/questions/32059384/why-new-fb-api-2-4-returns-null-email-on-mvc-5-with-identity-and-oauth-2*/
+
+
+                    //var identity = AuthenticationManager.GetExternalIdentity(DefaultAuthenticationTypes.ExternalCookie);
+                    //var accessToken = identity.FindFirstValue("FacebookAccessToken");
+                    //var fb = new FacebookClient(accessToken);
+                    //dynamic myInfo = fb.Get("/me?fields=email,first_name,last_name,gender,location"); // specify the email field
+                    //string GetEmail = "";
+                    //foreach (var Sup in myInfo)
+                    //{
+                    //    if (Sup.Key == "email")
+                    //    {
+                    //        GetEmail = Sup.Value;
+                    //        break;
+                    //    }
+                    //}
+                    ///*End of add*/
+                    //// Get the information about the user from the external login provider
+                    //var info = await AuthenticationManager.GetExternalLoginInfoAsync();
+                    //if (info == null)
+                    //{
+                    //    return View("ExternalLoginFailure");
+                    //}
+
+
+
+                    //var user = new ApplicationUser { UserName = loginInfo.DefaultUserName, Email = GetEmail, Name = loginInfo.ExternalIdentity.Name };
+                    //var result2 = await UserManager.CreateAsync(user);
+                    //if (result2.Succeeded)
+                    //{
+                    //    result2 = await UserManager.AddLoginAsync(user.Id, info.Login);
+                    //    if (result2.Succeeded)
+                    //    {
+                    //        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    //        return RedirectToLocal(returnUrl);
+                    //    }
+                    //}
+
+                    //ViewBag.ReturnUrl = returnUrl;
+                    //return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    #endregion
             }
         }
 
