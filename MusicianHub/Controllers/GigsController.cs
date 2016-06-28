@@ -2,7 +2,6 @@
 using MusicianHub.Models;
 using MusicianHub.ViewModel;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
@@ -137,21 +136,5 @@ namespace MusicianHub.Controllers
             }
         }
 
-    }
-
-
-    class reCaptchaResponse
-    {
-        [JsonProperty("success")]
-        public bool Success { get; set; }
-
-        [JsonProperty("challenge_ts")]
-        public string ValidatedDateTime { get; set; }
-
-        [JsonProperty("hostname")]
-        public string HostName { get; set; }
-
-        [JsonProperty("error-codes")]
-        public List<string> ErrorCodes { get; set; }
     }
 }
