@@ -69,6 +69,10 @@ namespace MusicianHub
                 ClientId = "857062679311-albdh35u57gve05vs0qso12r3jcbvjje.apps.googleusercontent.com",
                 ClientSecret = "gn7IAjt2oxFip_Fvo6ILHh8Q"
             });
+
+            app.UseFacebookAuthentication(
+               appId: "900746463371149",
+               appSecret: "06f1b22d3a7d3c76d99f0aced2acf4b9");
         }
     }
 }
