@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MusicianHub.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;

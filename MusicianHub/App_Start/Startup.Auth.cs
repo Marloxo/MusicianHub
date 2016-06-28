@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
-using Owin;
 using MusicianHub.Models;
+using Owin;
+using System;
 
 namespace MusicianHub
 {
@@ -34,7 +34,7 @@ namespace MusicianHub
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -63,6 +63,12 @@ namespace MusicianHub
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "857062679311-albdh35u57gve05vs0qso12r3jcbvjje.apps.googleusercontent.com",
+                ClientSecret = "gn7IAjt2oxFip_Fvo6ILHh8Q"
+            });
         }
     }
 }

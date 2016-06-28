@@ -2,11 +2,11 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MusicianHub.Models;
+using MusicianHub.ViewModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using MusicianHub.ViewModel;
 
 namespace MusicianHub.Controllers
 {
@@ -365,7 +365,7 @@ namespace MusicianHub.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

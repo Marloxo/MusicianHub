@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace MusicianHub
 {
@@ -25,6 +24,7 @@ namespace MusicianHub
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-social/bootstrap-social.css",
                       "~/Content/site.css"));
         }
     }
