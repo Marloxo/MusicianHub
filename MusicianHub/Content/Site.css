@@ -35,6 +35,10 @@ span.field-validation-error {
 .voffset4 { margin-top: 40px;}
 .voffset5 { margin-top: 80px;}
 
+/*Captcha*/
+.g-recaptcha {
+    margin: 15px -16px 30px -16px;
+}
 /*Bootstrap Overrides*/
 
 .navbar-inverse {
@@ -109,8 +113,8 @@ h6,
     }
 
 .btn {
-    /*font-size: 17px;
-    padding: 7px 20px;*/
+    font-size: 17px;
+    padding: 7px 20px;
     -ms-border-radius: 9px;
     border-radius: 9px;
 }
