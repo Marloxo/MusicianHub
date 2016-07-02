@@ -251,6 +251,10 @@
     <Compile Include="ViewModel\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-MusicianHub-20160613010029.mdf" />
+    <Content Include="App_Data\aspnet-MusicianHub-20160613010029_log.ldf">
+      <DependentUpon>aspnet-MusicianHub-20160613010029.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-social\assets\css\bootstrap.css" />
     <Content Include="Content\bootstrap-social\assets\css\docs.css" />
     <Content Include="Content\bootstrap-social\assets\css\font-awesome.css" />
@@ -266,6 +270,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Facebook\facebook.js" />
+    <Content Include="Content\Google\GoogleAnalytics.js" />
     <Content Include="Content\Help\Code-first-Migration_sequence.txt" />
     <Content Include="Content\Help\New Instruction.txt" />
     <Content Include="Content\Help\Resource\1.PNG" />
@@ -365,9 +371,7 @@
     <Content Include="Views\Gigs\Create.cshtml" />
     <Content Include="Views\Followees\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
