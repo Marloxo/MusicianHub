@@ -12,10 +12,13 @@ namespace MusicianHub.ViewModel
 
         [Required]
         [FutureDate]
+        [DataType(DataType.Date)]
         public string Date { get; set; }
 
         [Required]
         [ValidTime]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public string Time { get; set; }
 
         [Required]

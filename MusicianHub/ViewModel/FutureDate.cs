@@ -11,7 +11,7 @@ namespace MusicianHub.ViewModel
             DateTime dateTime;
             var s = Convert.ToString(value);
             var isValid = DateTime.TryParseExact(s,
-                @"d MMM yyyy",
+                @"yyyy-MM-dd",
                 CultureInfo.InvariantCulture,
                 DateTimeStyles.None,
                 out dateTime);
