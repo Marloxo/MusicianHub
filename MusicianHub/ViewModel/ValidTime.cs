@@ -12,7 +12,7 @@ namespace MusicianHub.ViewModel
             string time = Convert.ToString(value);
 
             var isValid = DateTime.TryParseExact(time,
-                "HH:mm",
+                "hh:mm tt",
                 CultureInfo.InvariantCulture,
                 //CultureInfo.CurrentCulture,
                 DateTimeStyles.None,

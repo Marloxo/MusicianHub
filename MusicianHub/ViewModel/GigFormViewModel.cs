@@ -18,7 +18,6 @@ namespace MusicianHub.ViewModel
         [Required]
         [ValidTime]
         [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public string Time { get; set; }
 
         [Required]

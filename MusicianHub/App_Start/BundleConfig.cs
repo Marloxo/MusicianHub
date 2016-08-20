@@ -29,12 +29,15 @@ namespace MusicianHub
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/bootstrap-datepicker/bootstrap-datepicker.js",    // ** NEW for Bootstrap Datepicker
+                      "~/Scripts/bootstrap-datetimepicker/moment.js",       // ** NEW for Bootstrap Datetimepicker
+                      "~/Scripts/bootstrap-datetimepicker/bootstrap-datetimepicker.js", // ** NEW for Bootstrap Datetimepicker
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-social/bootstrap-social.css",
                       "~/Content/bootstrap-datepicker/bootstrap-datepicker.css",  // ** NEW for Bootstrap Datepicker
+                      "~/Content/bootstrap-datetimepicker/bootstrap-datetimepicker.css",         // ** NEW for Bootstrap Datetimepicker
                       "~/Content/site.css"));
         }
     }
